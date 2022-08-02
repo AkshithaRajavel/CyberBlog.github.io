@@ -31,7 +31,7 @@ STRINGS IN C++
     From this we can understand that c style strings store all the characters directly in the stack,whereas the string 
     object only has a pointer(8 bytes for a 64 bit machine)stored in the stack.</p>
 <p>
-	<b>STRING LENGTH FUNCTION</b>
+	<b>STRING LENGTH FUNCTION</b><br>
 	<img src="images/str2.jpg"></img><br>
 	To understand more about the implementation, lets try to disassemble length() method of the string class<br>
 	Tool Used - IDA PRO <br>
@@ -41,12 +41,9 @@ STRINGS IN C++
 	In c style strings , the length of the string is determined by the null ternminating character.But in string class
 	objects,length is determined by the length field present in the structure.This can be proved with
 	a small example.<br>
-	
-	One can get the source code for the string class and directly look into length()function,
-	But it might be difficult to understand due to the usage of various naming conventions and requires  
-	familiarity with all c,c++ constructs,which is not needed with disassembling approach. <br>
-	Peeling the abstract layers of a language can be fun and it helps to get a better understanding of the 
-	language as well as programming concepts.
+	<b>CHANGING LENGTH FIELD BY EXPLOITING POINTERS</b><br>
+	<img src="images/str4.jpg"></img><br>
+	<b>OUTPUT:</b><br>16<br>computer<br>
 </p>
 </body>
 <footer>
