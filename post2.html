@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>STRINGS IN C++</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="C:\Users\AKSHITHA\MyBlogs\reset.css">
+<link rel="stylesheet" type="text/css" href="C:\Users\AKSHITHA\MyBlogs\debug.css">
+<link rel="stylesheet" type="text/css" href="C:\Users\AKSHITHA\MyBlogs\main.css">
+</head>
+<h1>
+STRINGS IN C++
+</h1>
+<body>
+<p>
+	C style strings are nothing but character arrays terminated by a null character - '\0'.Such strings can be exploited to 
+	perform buffer overflow or stack smashing. C++ provides an alternative,more secure way for implementing strings using 
+	string class which is a part of Standard Template Library.<br>
+</p>
+<p>
+	<b>Understanding implementation of strings in c++</b><br>
+	<i>
+	string s = "computer science";<br>
+	char c[]="computer science";<br>
+	cout<< sizeof(c)<<" c style" <<"\n"<< sizeof(s)<<" string object" ;<br>
+    </i>
+    <b>OUTPUT</b><br>
+    17 c style<br>
+    8 string object<br><br>
+    Notice that the size of the character array is equal to the size of actual string + 1 (for '\0').But for
+    string object size is equal to 8 bytes.But printing both 'c' and 's' using cout gives same result.<br>
+    From this we can understand that c style strings store all the characters directly in the stack,whereas the string 
+    object only has a pointer(8 bytes for a 64 bit machine)stored in the stack.</p>
+<p>
+	To understand more about the implementation, lets try to disassemble length() method of the string class<br><br>
+	The pointer that is stored in 's' is passed to length() and the function returns an integer that is 24 bytes(18 in hexadecimal)
+	before the location pointed by the pointer.Therefore the pointer stored in 's' is address of a structure in heap which has length of the string,the string itself and might possibily have more fields for storing attributes of the string object.<br>
+	In c style strings , the length of the string is determined by the null ternminating character.But in string class
+	objects,length is determined by the length field present in the structure.This can be proved with
+	a small example.<br>
+	
+	One can get the source code for the string class and directly look into length()function,
+	But it might be difficult to understand due to the usage of various naming conventions and requires  
+	familiarity with all c,c++ constructs,which is not needed with disassembling approach. <br>
+	Peeling the abstract layers of a language can be fun and it helps to get a better understanding of the 
+	language as well as programming concepts.
+</p>
+</body>
+<footer>
+	<a href="C:\Users\AKSHITHA\MyBlogs\index.html">HOME</a>
+</footer>
+</html>

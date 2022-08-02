@@ -1,0 +1,81 @@
+<!DOCTYPE html5>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>VULNERABILITY OF POINTERS IN C++</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="C:\Users\AKSHITHA\MyBlogs\reset.css">
+<link rel="stylesheet" type="text/css" href="C:\Users\AKSHITHA\MyBlogs\debug.css">
+<link rel="stylesheet" type="text/css" href="C:\Users\AKSHITHA\MyBlogs\main.css">
+</head>
+<body>
+<h1>
+	VULNERABILITY OF POINTERS IN C++
+</h1>
+<p>
+	You may already be aware that C language is vulnerable to various type of attacks such as buffer ovweflow,
+	stack smashing ,etc . The root cause for most vulnerabilities in C rise from the use of pointers.
+	C++ is considered to be more secure as it supports object oriented programming and thereby provides data
+	abstraction and security.But C++ supports C style pointers,for backwards compatibility.Use of pointers in C++
+	along with classes and objects makes object oriented programming principles meaningless.
+</p>
+<p>
+	Let's look into a simple example<br>
+
+	Access specifiers allows us to selectively limit the accessibility of some members of a class.
+	But pointers can be exploited to access the private and protected members of a class.<br>
+	<b>Consider a class Test<br></b>
+	<i>
+	class Test{<br>
+	private :<br>
+	int a,b;<br>
+	public :<br>
+	Test(int n1,int n2){<br>
+		a = n1;<br>
+		b = n2;<br>
+	   }<br>
+	};<br>
+	</i>
+	<b>Driver Code</b><br>
+	<i>
+	int main(){<br>
+	Test t(100,200);<br>
+	int arr[4]={1,2,3,4};<br>
+	int ind;<br>
+	cout<<"Index Limit : ";<br>
+	cin>>ind;<br>
+	for(int i=0;i<=ind;i++)<br>
+	cout<< arr[i]<<" ";<br>
+    }<br>
+	</i>
+	<b>Output:</b><br>
+	
+		Index Limit : 5<br>
+        1 2 3 4 100 200<br><br>
+    An instance of the class Test is created in the stack followed by an integer array .
+    The base address of the array is stored in the variable arr which resides in the stack.
+    Driver code prompts the user to enter the number of elements to be displayed. If an 
+    user inputs a number that execeeds the index limit of the array such as 5, and if the input 
+    is not handeled properly,the private members of object t will be  exposed. 
+</p>
+<p>
+	This is because all the data members of an object,irrespective of being public or private are stored in stack
+	in the same order as it is declared in the class. If you try to access private and protected members explicitly 
+	in the program,complier throws errors. But we can very well access them using pointers during runtime.This is an
+	example of stackoverflow.
+</p>
+<p>
+	This might not be a real world example, But there may be cases where C style pointers,arrays and strings are 
+	used in C++ which is a bad practice and results in a lot of attack vectors in real world applications.
+	The above scenario can be avoided by 
+	<br><li> use of new() while creating the object,which puts the object in heap instead of stack
+	<br><li>use of vectors or other linear data structure instead of C style arrays
+</p>
+</body>
+<footer>
+	<a href="C:\Users\AKSHITHA\MyBlogs\index.html">HOME</a>
+</footer>
+</html>
