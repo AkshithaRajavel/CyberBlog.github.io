@@ -28,23 +28,12 @@
 	Access specifiers allows us to selectively limit the accessibility of some members of a class.
 	But pointers can be exploited to access the private and protected members of a class.<br>
 	<b>Consider a class Test<br></b>
-	<img src="images/vuln1.jpg"></img>
+	<img src="images/vuln1.jpg"></img><br>
 	<b>Driver Code</b><br>
-	<i>
-	int main(){<br>
-	Test t(100,200);<br>
-	int arr[4]={1,2,3,4};<br>
-	int ind;<br>
-	cout<<"Index Limit : ";<br>
-	cin>>ind;<br>
-	for(int i=0;i<=ind;i++)<br>
-	cout<< arr[i]<<" ";<br>
-    }<br>
-	</i>
+	<img src="images/vuln2.jpg"></img><br>
 	<b>Output:</b><br>
-	
-		Index Limit : 5<br>
-        1 2 3 4 100 200<br><br>
+	Index Limit : 5<br>
+    1 2 3 4 100 200<br><br>
     An instance of the class Test is created in the stack followed by an integer array .
     The base address of the array is stored in the variable arr which resides in the stack.
     Driver code prompts the user to enter the number of elements to be displayed. If an 
