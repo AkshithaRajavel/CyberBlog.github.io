@@ -6,9 +6,10 @@ body {
   
   /* Header/Blog Title */
   .header {
-    max-width:fit-content;
+    word-wrap:break-word;
+    max-width:100%;
     padding: 10px;
-    font-size: 30px;
+    font-size:large;
     text-align: center;
     background: white;
   }
@@ -35,6 +36,9 @@ body {
   }
   
   /* Add a card effect for articles */
+  img{
+    max-width: 100%;
+  }
   p {
     font-size: 20px;
     background-color: white;
