@@ -50,7 +50,10 @@ STRINGS IN C++
 	<p>
 	<b>CHANGING LENGTH FIELD BY EXPLOITING POINTERS</b><br><br>
 	<img src="images/str4.jpg"></img><br><br>
-	<b>OUTPUT:</b><br>16<br>computer<br>
+	<b>OUTPUT:</b><br>16<br>computer<br><br>
+	Here the length field of the string structure is modified to 8. Due to this change in length,
+	while trying to  print the string using 'cout', instead of "computer science" which is 16 bytes long,
+	only "computer" is printed which is 8 bytes long.
 </p>
 </body>
 <div class="footer">
