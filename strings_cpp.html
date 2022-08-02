@@ -31,7 +31,11 @@ STRINGS IN C++
     From this we can understand that c style strings store all the characters directly in the stack,whereas the string 
     object only has a pointer(8 bytes for a 64 bit machine)stored in the stack.</p>
 <p>
-	To understand more about the implementation, lets try to disassemble length() method of the string class<br><br>
+	<b>STRING LENGTH FUNCTION</b>
+	<img src="images/str2.jpg"></img><br>
+	To understand more about the implementation, lets try to disassemble length() method of the string class<br>
+	Tool Used - IDA PRO <br>
+	<img src="images/str3.jpg"></img><br>
 	The pointer that is stored in 's' is passed to length() and the function returns an integer that is 24 bytes(18 in hexadecimal)
 	before the location pointed by the pointer.Therefore the pointer stored in 's' is address of a structure in heap which has length of the string,the string itself and might possibily have more fields for storing attributes of the string object.<br>
 	In c style strings , the length of the string is determined by the null ternminating character.But in string class
