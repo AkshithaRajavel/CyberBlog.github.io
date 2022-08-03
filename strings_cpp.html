@@ -13,14 +13,14 @@
 </head>
 <div class="header">
 <h1>
-STRINGS IN C++
+	WORKING OF STRINGS IN C++
 </h1>
 </div>
 <body>
 <p>
 	C style strings are nothing but character arrays terminated by a null character - '\0'.Such strings can be exploited to 
-	perform buffer overflow or stack smashing. C++ provides an alternative,more secure way for implementing strings using 
-	string class which is a part of Standard Template Library.<br>
+	perform buffer overflow or stack smashing . C++ provides an alternative,more secure way for implementing strings using 
+	string class which is a part of Standard Template Library(STL).<br>
 </p>
 <p>
 	<b>Understanding implementation of strings in c++</b><br><br>
@@ -38,12 +38,13 @@ STRINGS IN C++
 	
 	<img src="images/str2.jpg" ></img>
 	<br><br>
-	To understand more about the implementation, lets try to disassemble length() method of the string class<br>
+	To understand more about the implementation of string class objects , lets try to disassemble length() method of the string class<br>
 	<b>Tool Used - IDA PRO </b><br><br>
 	
 	<img src="images/str3.jpg" ></img><br><br>
 	The pointer that is stored in 's' is passed to length() and the function returns an integer that is 24 bytes(18 in hexadecimal)
-	before the location pointed by the pointer.Therefore the pointer stored in 's' is address of a structure in heap which has length of the string,the string itself and might possibily have more fields for storing attributes of the string object.<br>
+	before the memory location pointed by the pointer.Therefore the pointer stored in 's' is address of a structure in heap which contains 
+	length of the string,the string itself and few other fields for storing attributes of the string object.<br>
 	In c style strings , the length of the string is determined by the null ternminating character.But in string class
 	objects,length is determined by the length field present in the structure.This can be proved with
 	a small example.<br></p>
@@ -52,8 +53,10 @@ STRINGS IN C++
 	<img src="images/str4.jpg"></img><br><br>
 	<b>OUTPUT:</b><br>16<br>computer<br><br>
 	Here the length field of the string structure is modified to 8. Due to this change in length,
-	while trying to  print the string using 'cout', instead of "computer science" which is 16 bytes long,
-	only "computer" is printed which is 8 bytes long.
+	while trying to  print the string using 'cout', instead of printing the original string "computer science" 
+	which is 16 bytes long, only "computer" is printed which is 8 bytes long.This means that each time 
+	the length field of the string structure is checked before printing the string,thereby preventing 
+	buffer overflows.
 </p>
 </body>
 <div class="footer">

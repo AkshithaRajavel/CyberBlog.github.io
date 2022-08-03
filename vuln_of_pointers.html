@@ -14,18 +14,18 @@
 <body>
 <div class="header">
 <h1>
-	VULNERABILITY OF POINTERS IN C++
+	VULNERABILITY OF C STYLE POINTERS
 </h1>
 </div>
 <p>
-	You may already be aware that C language is vulnerable to various type of attacks such as buffer ovweflow,
+	You may already be aware that C language is vulnerable to various type of attacks such as buffer overflow,
 	stack smashing ,etc . The root cause for most vulnerabilities in C rise from the use of pointers.
 	C++ is considered to be more secure as it supports object oriented programming and thereby provides data
 	abstraction and security.But C++ supports C style pointers,for backwards compatibility.Use of pointers in C++
 	along with classes and objects makes object oriented programming principles meaningless.
 </p>
 <p>
-	Let's look into a simple example<br>
+	Let's look into a simple example<br><br>
 
 	Access specifiers allows us to selectively limit the accessibility of some members of a class.
 	But pointers can be exploited to access the private and protected members of a class.<br></p>
@@ -40,7 +40,7 @@
     1 2 3 4 <u>100 200</u><br><br>
     An instance of the class Test is created in the stack followed by an integer array .
     The base address of the array is stored in the variable arr which resides in the stack.
-    Driver code prompts the user to enter the number of elements to be displayed. If an 
+    Driver code prompts the user to enter the number of elements to be displayed. If a 
     user inputs a number that execeeds the index limit of the array such as 5, and if the input 
     is not handeled properly,the private members of object t will be  exposed. 
 </p>
@@ -51,11 +51,11 @@
 	example of stackoverflow.
 </p>
 <p>
-	This might not be a real world example, But there may be cases where C style pointers,arrays and strings are 
-	used in C++ which is a bad practice and results in a lot of attack vectors in real world applications.
+	This might not be a real world example, But there are cases where C style pointers,integer arrays,charcter arrays are used
+	in c++ programs,which is a bad practice and opens a lot of attack vectors in real world applications.<br>
 	The above scenario can be avoided by 
-	<br><li> use of new() while creating the object,which puts the object in heap instead of stack
-	<br><li>use of vectors or other linear data structure instead of C style arrays
+	<br><li> use of new() while creating objects,which puts the object in heap instead of stack.
+	<br><li>use of vectors,strings that belongs to STL instead of C style arrays.
 </p>
 </body>
 <div class="footer">
