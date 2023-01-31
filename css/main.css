@@ -1,9 +1,7 @@
-body {
-  font-family: Arial;
-  padding: 20px;
-  background: #f1f1f1;
+body{
+    font-size:1.5vw;
+    color: white;
 }
-
 /* Header/Blog Title */
 .header {
   word-wrap:break-word;
@@ -11,7 +9,8 @@ body {
   padding: 10px;
   font-size:large;
   text-align: center;
-  background: white;
+  color:white;
+  text-shadow: 3px 3px 10px #0FFF50;
 }
 
 /* Create two unequal columns that floats next to each other */
@@ -41,7 +40,7 @@ img{
 }
 p {
   font-size: 20px;
-  background-color: white;
+  background-color: grey;
   padding: 20px;
   margin-top: 20px;
 }
