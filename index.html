@@ -9,7 +9,11 @@
     rel="stylesheet">
     <style>
         body{
+            font-size:1.5vw;
             color: white;
+        }
+        h5{
+            font-size:3vw;
         }
         h1{
             text-align: center;
@@ -21,10 +25,8 @@
             color:black;
         }
         #front{
-            font-size: large;
             color:#0FFF50;
             width:100%;
-            height: 300px;
             background-image: url("https://images.wsj.net/im-600769?width=860&size=1.5");
             background-repeat: no-repeat;
             background-size: cover;
@@ -33,29 +35,21 @@
             box-shadow:  #0FFF50 10px 10px 10px; 
         }
         #item img{
-            max-height:300px;
+            width:80%;
         }
         .card .btn,.dropdown .btn{
             background-color:   #0FFF50;
             color:black;
             border: 0px;
         }
-        .container-fluid,.card{
+        .container-fluid{
             box-shadow:  #0FFF50 10px 10px 10px;  
         }
-        figure{
-            color:white;
-            text-shadow: 3px 3px 4px #0FFF50;
-            display: inline-block;
-        }
-        figure img{
-            width: 200px;
-            height: 200px;
+        .card:hover{
             box-shadow:  #0FFF50 10px 10px 10px;
-            transition: width 1s;
         }
-        figure img:hover{
-            width:250px;
+        #front img{
+            box-shadow:  #0FFF50 10px 10px 10px;
         }
     </style>
 </head>
@@ -66,40 +60,36 @@
 </div>
 <!--FRONT IMAGE-->
 <div id="front" class="mb-5">
-    <div style="background-color: rgb(128, 128, 128,0.6);height:300px;"class="container-fluid">
-        <div class="row col-gap-3 p-3 justify-content-center">
-        <figure class="col-3">
-            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20190902105053/Debugging-Tips-To-Get-Better-At-It.png">
-            <figcaption>Debugging</figcaption>
-          </figure>
-        <figure class="col-3">
-            <img src="https://miro.medium.com/max/1100/1*t280RdHyNyF9j9QPDToauw.webp">
-            <figcaption>Binary Exploitation</figcaption>
-        </figure>
-        <figure class="col-3">
-            <img src="https://securitytoday.com/articles/2019/02/26/-/media/SEC/Security-Products/Images/2019/02/reverseengineering.jpg">
-            <figcaption>Reverse Engineering</figcaption>
-        </figure>
+    <div style="background-color: rgb(128, 128, 128,0.6);"class="container-fluid">
+        <div class="row row-cols-2 p-3 justify-content-center">
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20190902105053/Debugging-Tips-To-Get-Better-At-It.png" class="col">
+        <h5 class="col pt-5">DEBUGGING</h5>
+        <h5 class="col pt-5">BINARY EXPLOITATION</h5>
+        <img src="https://miro.medium.com/max/1100/1*t280RdHyNyF9j9QPDToauw.webp" class="col">
+        <img src="https://securitytoday.com/articles/2019/02/26/-/media/SEC/Security-Products/Images/2019/02/reverseengineering.jpg" class="col">
+        <h5 class="col pt-5">REVERSE ENGINEERING</h5>
     </div>
     </div>
 </div>
 <!--EVENTS-->              
-<div id="item" class="container-fluid text-center bg-secondary p-5 mb-5">
+<div id="item" class="container-fluid text-center bg-secondary p-5 mb-5 position-relative">
     <h1>Blog Posts</h1>
-    <div class="row row-cols-1 row-cols-lg-2 justify-content-center position-static">
-        <div class="card bg-dark col-lg-5 m-3 position-static">
-            <div class="card-img-top">
-            <img src="https://static.javatpoint.com/cpages/images/pointer.png"></div>
+    <div class="row row-cols-1 row-cols-lg-2 justify-content-center">
+        <div class="card bg-dark col-lg-5 m-3 position-relative">
+        <div class="card-img-top">
+            <img src="https://static.javatpoint.com/cpages/images/pointer.png">
+        </div>
             <div class="card-body">
               <h5 class="card-title">VULNERABILITY OF C STYLE POINTERS</h5>
               <p class="card-text"><b>#Tags:</b> C , C++ , BinaryExploitation</p>
               <a href="random_research_blog_posts\blog1.html" class="btn">Read</a>
             </div>
           </div>
-          <div class="card bg-dark col-lg-5 m-3 position-static">
+          <div class="card bg-dark col-lg-5 m-3 position-relative">
             <div class="card-img-top">
-                <img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20201209135923/String-in-C.png"></div>
-            <div class="card-body">
+                <img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20201209135923/String-in-C.png">
+            </div>
+            <div class="card-body position-relative">
               <h5 class="card-title">STRINGS :C vs C++</h5>
               <p class="card-text"><b>#Tags:</b> C ,C++ ,Assembly language, ReverseEngineering (RE Tools)</p>
               <a href="random_research_blog_posts\blog2.html" class="btn">Read</a>
