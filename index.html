@@ -1,23 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>PROGRAMMING BLOGS</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="css\main.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+    <style>
+        body{
+            color: white;
+        }
+        h1{
+            text-align: center;
+            color:white;
+            text-shadow: 3px 3px 4px #0FFF50;
+        }
+        a{
+            text-decoration: none;
+            color:black;
+        }
+        #front{
+            font-size: large;
+            color:#0FFF50;
+            width:100%;
+            height: 300px;
+            background-image: url("https://images.wsj.net/im-600769?width=860&size=1.5");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .header{
+            box-shadow:  #0FFF50 10px 10px 10px; 
+        }
+        #item img{
+            max-height:300px;
+        }
+        .card .btn,.dropdown .btn{
+            background-color:   #0FFF50;
+            color:black;
+            border: 0px;
+        }
+        .container-fluid,.card{
+            box-shadow:  #0FFF50 10px 10px 10px;  
+        }
+        figure{
+            color:white;
+            text-shadow: 3px 3px 4px #0FFF50;
+            display: inline-block;
+        }
+        figure img{
+            width: 200px;
+            height: 200px;
+            box-shadow:  #0FFF50 10px 10px 10px;
+            transition: width 1s;
+        }
+        figure img:hover{
+            width:250px;
+        }
+    </style>
 </head>
-<body>
-<div class="header">
-<h1>TOPICS</h1>
+<body class="m-2 p-2 m-lg-3 bg-dark">
+<!--NAVIGATION BAR-->
+<div class="header bg-secondary mb-4 position-sticky top-0">
+    <h1>RAVEN Blogs</h1>
 </div>
-<p>
-<h2><a href="random_research_blog_posts\blog1.html">1. VULNERABILITY OF C STYLE POINTERS</a></h2>
-C , C++ , BinaryExploitation</p>
-<p>
-<h2><a href="random_research_blog_posts\blog2.html">2. STRINGS :C vs C++</a></h2>
-C ,C++ ,Assembly language, ReverseEngineering (RE Tools)</p>
+<!--FRONT IMAGE-->
+<div id="front" class="mb-5">
+    <div style="background-color: rgb(128, 128, 128,0.6);height:300px;"class="container-fluid">
+        <div class="row col-gap-3 p-3 justify-content-center">
+        <figure class="col-3">
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20190902105053/Debugging-Tips-To-Get-Better-At-It.png">
+            <figcaption>Debugging</figcaption>
+          </figure>
+        <figure class="col-3">
+            <img src="https://miro.medium.com/max/1100/1*t280RdHyNyF9j9QPDToauw.webp">
+            <figcaption>Binary Exploitation</figcaption>
+        </figure>
+        <figure class="col-3">
+            <img src="https://securitytoday.com/articles/2019/02/26/-/media/SEC/Security-Products/Images/2019/02/reverseengineering.jpg">
+            <figcaption>Reverse Engineering</figcaption>
+        </figure>
+    </div>
+    </div>
+</div>
+<!--EVENTS-->              
+<div id="item" class="container-fluid text-center bg-secondary p-5 mb-5">
+    <h1>Blog Posts</h1>
+    <div class="row row-cols-1 row-cols-lg-2 justify-content-center position-static">
+        <div class="card bg-dark col-lg-5 m-3 position-static">
+            <div class="card-img-top">
+            <img src="https://static.javatpoint.com/cpages/images/pointer.png"></div>
+            <div class="card-body">
+              <h5 class="card-title">VULNERABILITY OF C STYLE POINTERS</h5>
+              <p class="card-text"><b>#Tags:</b> C , C++ , BinaryExploitation</p>
+              <a href="random_research_blog_posts\blog1.html" class="btn">Read</a>
+            </div>
+          </div>
+          <div class="card bg-dark col-lg-5 m-3 position-static">
+            <div class="card-img-top">
+                <img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20201209135923/String-in-C.png"></div>
+            <div class="card-body">
+              <h5 class="card-title">STRINGS :C vs C++</h5>
+              <p class="card-text"><b>#Tags:</b> C ,C++ ,Assembly language, ReverseEngineering (RE Tools)</p>
+              <a href="random_research_blog_posts\blog2.html" class="btn">Read</a>
+            </div>
+          </div>
+    </div>
+</div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </html>
